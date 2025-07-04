@@ -1,0 +1,14 @@
+/* App.css */
+
+.text-yarnGreen {
+    color: #3B5422;
+  }
+  
+  .bg-yarnGreen {
+    background-color: #3B5422;
+  }
+  
+  /* Add more utility-style classes if needed */
+  .border-yarnGreen {
+    border-color: #3B5422;
+  }

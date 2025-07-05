@@ -17,10 +17,9 @@
     color: #123524;
   }
   .bg-hero-gradient {
-    background: linear-gradient(to bottom, #FFFBDD 10%, #FEF6B7 90%);
+    background: linear-gradient(to bottom, #FFFBDD 35%, #FEF6B7 40%);
   }
-
-  @keyframes drawStroke {
+  @keyframes drawLine {
     to {
       stroke-dashoffset: 0;
     }

@@ -12,3 +12,16 @@
   .border-yarnGreen {
     border-color: #3B5422;
   }
+
+  .text-fontGreen {
+    color: #123524;
+  }
+  .bg-hero-gradient {
+    background: linear-gradient(to bottom, #FFFBDD 10%, #FEF6B7 90%);
+  }
+
+  @keyframes drawStroke {
+    to {
+      stroke-dashoffset: 0;
+    }
+  }

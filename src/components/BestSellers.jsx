@@ -1,11 +1,12 @@
 import React, { useRef } from 'react';
 import { motion, useScroll, useTransform, useSpring } from 'framer-motion';
-import coaster from "../assets/coaster.png";
 import strawberry from "../assets/strawberry.png";
 import flower from "../assets/flower.png";
 import daisy from "../assets/daisy.png";
 import holder from "../assets/holder.png"
 import FadeInOnView from './FadeInOnView';
+import Octopus from "../assets/Octopus.png"
+import flower_pot from "../assets/flower_pot.png"
 
 
 const products = [
@@ -14,20 +15,25 @@ const products = [
         price: "$180",
         image: flower,
       },
+      {
+        title: "Octopus Keychain",
+        price: "$150",
+        image: Octopus,
+      },
   {
     title: "Daisy ToteBag",
     price: "$200",
     image: daisy,
   },
   {
+    title: "Flower Pot",
+    price: "$150",
+    image: flower_pot,
+  },
+  {
     title: "Strawberry Coin Purse",
     price: "$100",
     image: strawberry,
-  },
-  {
-    title: "Pink Detailed Coaster",
-    price: "$150",
-    image: coaster,
   },
   {
     title: "Sunglass case",
@@ -52,7 +58,7 @@ const BestSellers = () => {
           
           <div ref={ref} className="relative h-[1000vh] sm:h-[1000vh] md:h-[700vh] lg:h-[400vh]">
           <div className="sticky top-0 h-screen flex flex-col items-center justify-center overflow-x-hidden">
-          <div className="text-center mb-12 -mt-6">
+          <div className="text-center mb-20 -mt-10">
         <FadeInOnView><h2 className="text-fontGreen font-[Playfair]  text-4xl md:text-5xl">Our Best Sellers</h2>
           <p className="text-lg font-[Playfair] md:text-xl mt-2 text-fontGreen">
             Little handcrafted joys people keep coming back for.
@@ -60,7 +66,7 @@ const BestSellers = () => {
           </FadeInOnView>
         </div>
   
-          <div className="bg-[#FEF6B7] rounded-[80px] py-15 px-4 sm:px-6 md:px-10 lg:px-14 xl:px-24 w-full max-w-[900px] xl:max-w-[1400px] mx-auto overflow-x-hidden">
+          <div className="bg-[#FEF6B7] rounded-[80px] py-15 px-4 sm:px-6 md:px-10 lg:px-14 xl:px-24 w-full max-w-[1000px] xl:max-w-[1400px] mx-auto overflow-x-hidden">
               <motion.div style={{ x: smoothX }} className="flex gap-10 w-fit">
               {products.map((item, index) => {
 const cardCenter = index * 510 + 150; 

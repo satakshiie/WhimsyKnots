@@ -27,7 +27,7 @@ const Hero = () => {
         </h1>
         <p className=" text-4xl md:text-5xl lg:text-6xl pt-4  font-[Dancing_Script] mb-10 animate-fadeUp" 
           style={{ animationDelay: "1.3s", animationFillMode: "both" }}>
-          By Whimsy Knot
+          By Whimsy Knots
         </p>
 
         <div className="mt-6 flex justify-center gap-4 animate-fadeUp "  

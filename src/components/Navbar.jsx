@@ -7,7 +7,7 @@ const Navbar = () => {
 
 const [isMenuOpen, setIsMenuOpen]= useState(false);
   return (
-    <nav className="w-full px-7 py-4 bg-white flex items-center justify-between shadow-md z-50 relative">
+    <nav className="w-full  px-7 py-4 bg-white/30 backdrop-blur-sm border-b border-white/20 shadow-md flex items-center justify-between z-50 fixed top-0 left-0">
       
 
       <div className="flex items-center gap-6">
@@ -44,7 +44,7 @@ const [isMenuOpen, setIsMenuOpen]= useState(false);
       </div>
 
 
-      <div className="absolute left-1/2 top-0 transform -translate-x-1/2 translate-y-[20%] w-25 h-22 bg-white rounded-full shadow-lg flex items-center justify-center z-20">
+      <div className="absolute left-1/2 top-0 transform -translate-x-1/2 translate-y-[20%] w-25 h-22 bg-white/30 backdrop-blur-md rounded-full shadow-lg flex items-center justify-center z-20">
         <img
           src={navbarlogo}
           alt="Whimsy Knots logo"

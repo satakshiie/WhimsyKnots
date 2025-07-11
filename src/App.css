@@ -36,3 +36,17 @@
     font-weight: 300;
     font-style: normal;
   }
+  @keyframes fadeUp {
+    0% {
+      opacity: 0;
+      transform: translateY(60px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .animate-fadeUp {
+    animation: fadeUp 0.7s ease-out;
+  }

@@ -24,7 +24,7 @@ const About = () => {
         className="w-full md:w-1/2 object-cover"
       />
       <div className="md:w-1/2">
-        <p className="text-md md:text-2xl text-center leading-relaxed">
+        <p className="text-md md:text-2xl text-center leading-relaxed font-[">
         Hey there! I’m Namita - the hands behind 𝘉𝘺 𝘞𝘩𝘪𝘮𝘴𝘺 𝘒𝘯𝘰𝘵𝘴.What began in quiet corners is now a colorful little world of yarn and dreams.<br></br>
         At whimsy knots, every creation tells a story. We make everyday pieces-bags, coasters, keychains and more- crocheted  by hand and heart.</p><br></br>
         <h3 className='text-md md:text-3xl text-center koh-santepheap-light'>Designed To be Useful <br></br>Made To Be Soulful</h3>

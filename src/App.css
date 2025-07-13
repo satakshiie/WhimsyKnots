@@ -53,3 +53,6 @@
   .animate-fadeUp-delayed {
     animation: fadeUp 0.7s ease-out 2.5s forwards;
   }
+  html {
+    scroll-behavior: smooth;
+  }

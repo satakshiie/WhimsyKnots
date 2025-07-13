@@ -11,7 +11,9 @@ const Home = () => {
      <Hero/> 
      <BestSellers />
      <Featured/>
-     <About />
+     <section id="about">
+        <About />
+      </section>
      <Contact/>
     </div>
   )

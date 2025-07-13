@@ -7,12 +7,12 @@ const Navbar = () => {
 
 const [isMenuOpen, setIsMenuOpen]= useState(false);
   return (
-    <nav className="w-full  px-7 py-4 bg-white/30 backdrop-blur-sm border-b border-white/20 shadow-md flex items-center justify-between z-50 fixed top-0 left-0">
+    <nav className="w-full  px-7 py-4 bg-white/30 backdrop-blur-sm border-b border-white/20 shadow-md flex items-center justify-between z-50 fixed top-0 left-0 " >
       
 
       <div className="flex items-center gap-6">
-      <button onClick={() => setIsMenuOpen(!isMenuOpen)}>
-     <FiMenu className="text-2xl cursor-pointer" />
+      <button onClick={() => setIsMenuOpen(!isMenuOpen)}  className="p-2 rounded-full  hover:bg-white/90 transition">
+      <FiMenu className="text-2xl cursor-pointer " />
      </button>
 
         <div className="hidden md:flex gap-6 font-[Playfair] text-lg">
@@ -24,14 +24,12 @@ const [isMenuOpen, setIsMenuOpen]= useState(false);
           >
             home
           </NavLink>
-          <NavLink
-            to="/about"
-            className={({ isActive }) =>
-              isActive ? "underline text-yarnGreen" : "hover:underline"
-            }
-          >
-            about
-          </NavLink>
+          <a
+  href="#about"
+  className="hover:underline text-lg font-[Playfair]"
+>
+  about
+</a>
           <NavLink
             to="/contact"
             className={({ isActive }) =>
@@ -96,7 +94,13 @@ const [isMenuOpen, setIsMenuOpen]= useState(false);
     
     <NavLink to="/" onClick={() => setIsMenuOpen(false)} className="text-lg font-playfair">Home</NavLink>
     <hr className="my-1" />
-    <NavLink to="/about" onClick={() => setIsMenuOpen(false)} className="text-lg font-playfair">About</NavLink>
+    <a
+  href="#about"
+  onClick={() => setIsMenuOpen(false)}
+  className="text-lg font-playfair"
+>
+  About
+</a>
     <hr className="my-0" />
     <NavLink to="/contact" onClick={() => setIsMenuOpen(false)} className="text-lg font-playfair">Contact</NavLink>
     <hr className="my-0" />

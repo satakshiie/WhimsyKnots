@@ -8,6 +8,7 @@ import tote from "../assets/tote.png";
 import coaster from "../assets/coaster.png";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
+
 const products = [
   {
     title: "Evil-Eye Keychain",

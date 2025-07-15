@@ -1,19 +1,21 @@
-import React from 'react';
+import React , {useContext} from 'react';
 import {products} from '../Data/Product'; 
+import { ShopContext } from '../context/ShopContext';
+import ProductCard from '../components/ProductCard';
 
+  
 const Shop = () => {
+    const { currency } = useContext(ShopContext);
   return (
-    <div className="p-10">
-      <h1 className="text-3xl font-bold mb-6">Shop All Products</h1>
-      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6">
-        {products.map((products) => (
-          <div key={products.id} className="border p-4">
-            <img src={products.image} alt={products.name} className="w-full h-auto" />
-            <h2 className="mt-2 text-lg font-semibold">{products.name}</h2>
+        <section className="min-h-screen bg-[#FFFBDD] py-20 px-4 md:px-16">
+          <h2 className="text-4xl font-[Playfair] text-fontGreen mb-15 mt-10 text-center">Shop All</h2>
+    
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-15">
+            {products.map((products) => (
+              <ProductCard key={products.id} product={products} currency={currency} />
+            ))}
           </div>
-        ))}
-      </div>
-    </div>
+        </section>
   );
 };
 

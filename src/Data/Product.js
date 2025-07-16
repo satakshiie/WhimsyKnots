@@ -43,6 +43,7 @@ const products = [
         image: strawberry,
         category: "accessories",
         description: "A cute strawberry-shaped coin-purse, perfect for gifting.",
+        variants: ["Red", "Pink"],
       },
       {
         id: 5,

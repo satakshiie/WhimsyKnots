@@ -8,16 +8,42 @@ export const ShopContextProvider = ({ children }) => {
   const [cartItems, setCartItems] = useState([]);
   const [wishlistItems, setWishlistItems] = useState([]);
 
-  const addToCart = (productId) => {
-    setCartItems((prev) => {
-      if (!prev.includes(productId)) return [...prev, productId];
-      return prev;
-    });
-  };
+  const addToCart = (product, selectedVariant = null) => {
 
+    if (product.variants?.length > 0 && !selectedVariant) {
+      alert("Please select a variant before adding to cart.");
+      return;
+    }
+  
+    setCartItems((prev) => {
+      const existing = prev.find(
+        (item) =>
+          item.id === product.id &&
+          (product.variants?.length > 0 ? item.variant === selectedVariant : true)
+      );
+  
+      if (existing) {
+
+        return prev.map((item) =>
+          item.id === product.id &&
+          (product.variants?.length > 0 ? item.variant === selectedVariant : true)
+            ? { ...item, quantity: item.quantity + 1 }
+            : item
+        );
+      } else {
+  
+        const newItem = {
+          ...product,
+          quantity: 1,
+          ...(selectedVariant && { variant: selectedVariant }),
+        };
+        return [...prev, newItem];
+      }
+    });
+  }; 
   const removeFromCart = (productId) => {
-    setCartItems((prev) => prev.filter((id) => id !== productId));
-  };
+  setCartItems((prev) => prev.filter((item) => item.id !== productId));
+};
 
   const addToWishlist = (productId) => {
     setWishlistItems((prev) => {
@@ -30,6 +56,12 @@ export const ShopContextProvider = ({ children }) => {
     setWishlistItems((prev) => prev.filter((id) => id !== productId));
   };
 
+  const getCartTotal = () => {
+    return cartItems.reduce((total, item) => {
+      return total + item.price * item.quantity;
+    }, 0);
+  };
+ 
   return (
     <ShopContext.Provider
       value={{
@@ -41,6 +73,7 @@ export const ShopContextProvider = ({ children }) => {
         wishlistItems,
         addToWishlist,
         removeFromWishlist,
+        getCartTotal
       }}
     >
       {children}

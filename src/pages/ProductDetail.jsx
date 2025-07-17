@@ -23,7 +23,7 @@ const ProductDetail = () => {
           <p className="text-xl text-gray-600 mb-4">₹{product.price}</p>
           <p className="text-md text-gray-800 mb-6">{product.description}</p>
 
-          {product.variants && (
+          {product.variants > 0 && (
         <div className="mt-4 mb-4">
           <label htmlFor="variant" className="block text-md mb-2 font-medium">
             Choose Variant:

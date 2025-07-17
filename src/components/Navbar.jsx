@@ -2,9 +2,10 @@ import React, { useState } from "react";
 import { FiMenu, FiHeart, FiShoppingCart } from "react-icons/fi";
 import { NavLink } from "react-router-dom";
 import navbarlogo from "../assets/navbarlogo.png";
+import { useNavigate } from 'react-router-dom';
 
 const Navbar = () => {
-
+   const navigate = useNavigate();
 const [isMenuOpen, setIsMenuOpen]= useState(false);
   return (
     <nav className="w-full  px-7 py-4 bg-white/30 backdrop-blur-sm border-b border-white/20 shadow-md flex items-center justify-between z-50 fixed top-0 left-0 " >
@@ -77,15 +78,24 @@ const [isMenuOpen, setIsMenuOpen]= useState(false);
           signup
         </NavLink>
         <div className="hidden md:flex items-center gap-3 ml-4">
-     <FiHeart className="text-2xl cursor-pointer hover:text-yarnGreen transition" />
-     <FiShoppingCart className="text-2xl cursor-pointer hover:text-yarnGreen transition" />
+        <FiHeart 
+    className="text-2xl cursor-pointer hover:text-yarnGreen transition"
+    onClick={() => navigate('/wishlist')}
+  />
+   <FiShoppingCart 
+        className="text-2xl cursor-pointer hover:text-yarnGreen transition"
+         onClick={() => navigate('/cart')}
+    />
      </div> 
       </div>
 
 
       <div className="md:hidden flex items-center gap-4 ml-auto">
         <FiHeart className="text-xl" />
-        <FiShoppingCart className="text-xl" />
+        <FiShoppingCart 
+       className="text-2xl cursor-pointer hover:text-yarnGreen transition"
+       onClick={() => navigate('/cart')}
+         />
       </div>
 
       {isMenuOpen && (

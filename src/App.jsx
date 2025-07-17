@@ -5,6 +5,8 @@ import Navbar from './components/Navbar'
 import Home from './pages/Home'
 import Shop from './pages/Shop'
 import ProductDetail from './pages/ProductDetail'
+import Cart from './pages/Cart';
+import Wishlist from './pages/Wishlist'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -16,7 +18,8 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/shop" element={<Shop />} />
         <Route path="/product/:id" element={<ProductDetail />} />
-        
+        <Route path="/cart" element={<Cart/>} />
+        <Route path="/wishlist" element={<Wishlist/>} />
       </Routes>
     </>
   )

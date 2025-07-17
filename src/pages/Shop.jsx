@@ -3,6 +3,7 @@ import {products} from '../Data/Product';
 import { ShopContext } from '../context/ShopContext';
 import ProductCard from '../components/ProductCard';
 
+
   
 const Shop = () => {
     const { currency } = useContext(ShopContext);

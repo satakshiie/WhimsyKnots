@@ -61,6 +61,7 @@ const [isMenuOpen, setIsMenuOpen]= useState(false);
         >
           shop
         </NavLink>
+        
         <NavLink
           to="/login"
           className={({ isActive }) =>

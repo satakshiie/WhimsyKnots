@@ -7,6 +7,8 @@ import Shop from './pages/Shop'
 import ProductDetail from './pages/ProductDetail'
 import Cart from './pages/Cart';
 import Wishlist from './pages/Wishlist'
+import PlaceOrder from './pages/PlaceOrder'
+import Signup from './pages/SignUp'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -20,6 +22,8 @@ function App() {
         <Route path="/product/:id" element={<ProductDetail />} />
         <Route path="/cart" element={<Cart/>} />
         <Route path="/wishlist" element={<Wishlist/>} />
+        <Route path="/placeorder" element={<PlaceOrder />} />
+        <Route path="/signup" element = {<Signup/>} />
       </Routes>
     </>
   )

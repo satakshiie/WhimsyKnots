@@ -45,13 +45,17 @@ export const ShopContextProvider = ({ children }) => {
   setCartItems((prev) => prev.filter((item) => item.id !== productId));
 };
 
-  const addToWishlist = (productId) => {
+const addToWishlist = (product) => {
     setWishlistItems((prev) => {
-      if (!prev.includes(productId)) return [...prev, productId];
+      const exists = prev.find(
+        (item) =>
+          item.id === product.id &&
+          (product.variant ? item.variant === product.variant : true)
+      );
+      if (!exists) return [...prev, product];
       return prev;
     });
   };
-
   const removeFromWishlist = (productId) => {
     setWishlistItems((prev) => prev.filter((id) => id !== productId));
   };
@@ -62,6 +66,10 @@ export const ShopContextProvider = ({ children }) => {
     }, 0);
   };
  
+  const  clearCart = () => {
+    setCartItems([]);
+  }
+
   return (
     <ShopContext.Provider
       value={{
@@ -73,7 +81,8 @@ export const ShopContextProvider = ({ children }) => {
         wishlistItems,
         addToWishlist,
         removeFromWishlist,
-        getCartTotal
+        getCartTotal,
+        clearCart
       }}
     >
       {children}

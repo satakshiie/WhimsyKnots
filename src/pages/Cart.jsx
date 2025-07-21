@@ -1,8 +1,11 @@
-import { useContext } from "react";
+import  { useContext } from "react";
 import { ShopContext } from "../context/ShopContext";
 import { products } from "../Data/Product"; 
 import { FiTrash2 } from "react-icons/fi"; 
 import CartTotal from "../components/CartTotal";
+import { Link } from 'react-router-dom';
+
+
 
 const Cart = () => {
   const { cartItems, removeFromCart } = useContext(ShopContext);
@@ -48,6 +51,13 @@ const Cart = () => {
           <h2 className="text-lg font-semibold text-fontGreen mb-2">Total</h2>
           <CartTotal />
         </div>
+
+     <Link to="/placeorder">
+        <button className="mt-4 w-full py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition">
+        Proceed to Checkout
+       </button>
+      </Link>
+        
     </div>
   );
 };

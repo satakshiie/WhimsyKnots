@@ -1,10 +1,13 @@
-
-import React, {useState} from 'react';
-import { useParams } from 'react-router-dom';
+import React, { useState, useContext } from 'react';
+import { useNavigate, useParams } from 'react-router-dom';
 import { ShopContext } from '../context/ShopContext';
 import { products } from '../Data/Product'; 
+
+
 const ProductDetail = () => {
   const { id } = useParams(); 
+  const navigate = useNavigate();
+  const { addToWishlist } = useContext(ShopContext);
   const product = products.find((item) => item.id.toString() === id);
   const [selectedVariant, setSelectedVariant] = useState(
     product?.variants?.[0] || ""
@@ -46,9 +49,15 @@ const ProductDetail = () => {
           <button className="px-6 py-2 bg-yarnGreen text-white rounded-md hover:bg-green-700 transition">
             Add to Cart
           </button>
-          <button className='px-10 py-2 bg-[maroon] text-white rounded-md hover-bg-red-700 transition'>
-            Wishlist 🤍
-          </button>
+          <button
+  onClick={() => {
+    addToWishlist({ ...product, variant: selectedVariant });
+    navigate('/wishlist');
+  }}
+  className="px-10 py-2 bg-[maroon] text-white rounded-md hover:bg-red-700 transition"
+>
+  Wishlist 🤍
+</button>
           </div>
         </div>
       </div>
